@@ -1,0 +1,145 @@
+{
+  "title": "甘氏岑溪支族先祖来去走向图表：",
+  "originalPage": 3,
+  "diagram": {
+    "route": [
+      "中原地带",
+      "河南",
+      "湖北",
+      "江西",
+      "广东",
+      "广西",
+      "岑溪。"
+    ],
+    "founderLabel": "迁入岑溪始祖：",
+    "founderRoute": [
+      "永宣公",
+      "检教",
+      "朝亮三子"
+    ],
+    "tree": {
+      "name": "朝亮三子",
+      "children": [
+        {
+          "rank": "三",
+          "name": "宗深",
+          "children": [
+            {
+              "rank": "三",
+              "name": "法兆",
+              "children": [
+                {
+                  "name": "甘朋公",
+                  "place": "藤县",
+                  "children": [
+                    {
+                      "rank": "次",
+                      "name": "际章",
+                      "result": "平南六陈"
+                    },
+                    {
+                      "rank": "长",
+                      "name": "际亨",
+                      "children": [
+                        {
+                          "name": "保志公",
+                          "place": "岑溪六雪",
+                          "children": [
+                            {
+                              "name": "庆求公",
+                              "children": [
+                                {
+                                  "rank": "三",
+                                  "name": "道显",
+                                  "children": [
+                                    {
+                                      "name": "启锦、启铭",
+                                      "lines": [
+                                        "启传、启华",
+                                        "启荣、启监等"
+                                      ],
+                                      "note": "迁入滩底"
+                                    },
+                                    {
+                                      "name": "启瑞",
+                                      "result": "启余",
+                                      "resultPlace": "七木"
+                                    },
+                                    {
+                                      "name": "启清",
+                                      "place": "龙角"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "rank": "次",
+                                  "name": "道圣",
+                                  "children": [
+                                    {
+                                      "rank": "次",
+                                      "name": "世华",
+                                      "children": [
+                                        {
+                                          "name": "福成、福佳",
+                                          "lines": [
+                                            "福安、福文"
+                                          ],
+                                          "note": "留住六雪"
+                                        },
+                                        {
+                                          "name": "福宪",
+                                          "lines": [
+                                            "福亮、福官、福玩"
+                                          ],
+                                          "note": "迁入陀冲"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "rank": "长",
+                                      "name": "重华",
+                                      "place": "白梅冲"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "rank": "长",
+                                  "name": "道举",
+                                  "result": "去向不明"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "rank": "次",
+              "name": "法宽",
+              "place": "容县　北流"
+            },
+            {
+              "rank": "长",
+              "name": "法安",
+              "place": "广东高州"
+            }
+          ]
+        },
+        {
+          "rank": "次",
+          "name": "宗耀",
+          "result": "去向不明"
+        },
+        {
+          "rank": "长",
+          "name": "宗光",
+          "result": "留住岑溪"
+        }
+      ]
+    }
+  }
+}

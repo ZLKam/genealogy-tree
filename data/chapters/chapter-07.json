@@ -1,0 +1,27 @@
+{
+  "title": "肇光、肇昌、肇元、肇荣公",
+  "originalPage": 10,
+  "content": [],
+  "lineageRecord": {
+    "entries": [
+      { "kind": "branch", "marker": "☆", "text": "作贤：" },
+      { "level": 1, "marker": "一、", "text": "肇光娶邓氏生二子：寿壬、寿现，均无嗣。" },
+      { "level": 1, "marker": "二、", "text": "肇昌 无嗣。" },
+      { "kind": "branch", "marker": "☆", "text": "作林：" },
+      { "level": 1, "text": "肇元娶余氏生三子：寿贤、寿达、寿朝。" },
+      { "level": 2, "marker": "1、", "text": "寿贤娶繁氏生二女：月兑、思琳。" },
+      { "level": 2, "marker": "2、", "text": "寿达 无嗣。" },
+      { "level": 2, "marker": "3、", "text": "寿朝 无嗣。" },
+      { "kind": "branch", "marker": "☆", "text": "作业：" },
+      { "level": 1, "text": "肇荣娶余氏生三子：寿发、寿泽、寿忠。" },
+      { "level": 1, "text": "二女：慧惠、丽芬。" },
+      { "level": 2, "marker": "1、", "text": "寿发娶陆邓丽生二子：延英、延奇，二女桂容、桂凤。" },
+      { "level": 3, "marker": "①、", "text": "延英" },
+      { "level": 3, "marker": "②、", "text": "延奇" },
+      { "level": 2, "marker": "2、", "text": "寿泽娶王美修生二子：延成、延龙。" },
+      { "level": 3, "marker": "①、", "text": "延成" },
+      { "level": 3, "marker": "②、", "text": "延龙" },
+      { "level": 2, "marker": "3、", "text": "寿忠娶廖静清生一子：延志。" }
+    ]
+  }
+}

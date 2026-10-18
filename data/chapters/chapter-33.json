@@ -1,0 +1,26 @@
+{
+  "title": "以球、以奇、以海、以沃、以全公",
+  "originalPage": 37,
+  "content": [],
+  "lineageRecord": {
+    "entries": [
+      { "level": 1, "marker": "二、", "text": "以球" },
+      { "level": 1, "marker": "三、", "text": "以奇" },
+      { "kind": "branch", "marker": "☆", "text": "启荣娶廖氏生三子：以海、以沃、以全。" },
+      { "level": 1, "marker": "一、", "text": "以海" },
+      { "level": 1, "marker": "二、", "text": "以沃娶李氏生二子：发初、强初。" },
+      { "level": 2, "marker": "1、", "text": "发初娶覃氏生三子：庆标、庆坤、庆荣。" },
+      { "level": 3, "marker": "①、", "text": "庆标" },
+      { "level": 3, "marker": "②、", "text": "庆坤" },
+      { "level": 3, "marker": "③、", "text": "庆荣娶郭氏生一子：宇昌。" },
+      { "level": 2, "marker": "2、", "text": "强初娶陆氏生三子：庆志、庆福、庆成。" },
+      { "level": 3, "marker": "①、", "text": "庆志" },
+      { "level": 3, "marker": "②、", "text": "庆福" },
+      { "level": 3, "marker": "③、", "text": "庆成" },
+      { "level": 1, "marker": "三、", "text": "以全，去南洋，娶严氏生一子：任初。" },
+      { "level": 2, "text": "任初娶吴氏生二子：金昌、昌华，一女。" },
+      { "level": 3, "marker": "①、", "text": "金昌" },
+      { "level": 3, "marker": "②、", "text": "昌华" }
+    ]
+  }
+}

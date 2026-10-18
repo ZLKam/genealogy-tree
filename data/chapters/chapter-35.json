@@ -1,0 +1,22 @@
+{
+  "title": "以华、以业、以东、以成公",
+  "originalPage": 39,
+  "content": [],
+  "lineageRecord": {
+    "entries": [
+      { "kind": "branch", "marker": "☆", "text": "启照娶覃氏生一子：以华。" },
+      { "level": 1, "text": "以华娶吴氏三子：东初、邓初、林初。" },
+      { "level": 2, "marker": "1、", "text": "东初" },
+      { "level": 2, "marker": "2、", "text": "邓初" },
+      { "level": 2, "marker": "3、", "text": "林初" },
+      { "kind": "branch", "marker": "☆", "text": "启福娶岑氏生三子：以业、以东、以成。" },
+      { "level": 1, "marker": "一、", "text": "以业娶吴氏生一子：宏初。" },
+      { "level": 2, "text": "宏初" },
+      { "level": 1, "marker": "二、", "text": "以东娶岑氏　无嗣。" },
+      { "level": 1, "marker": "三、", "text": "以成娶黄氏生二子：志初、裕初。" },
+      { "level": 2, "marker": "1、", "text": "志初娶陈氏生一子：火昌。" },
+      { "level": 3, "text": "火昌" },
+      { "level": 2, "marker": "2、", "text": "裕初" }
+    ]
+  }
+}

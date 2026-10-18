@@ -1,0 +1,71 @@
+{
+  "title": "甘氏迁入岑溪支系世代排行辈份表：",
+  "originalPage": 4,
+  "generationRecord": {
+    "generations": [
+      { "text": "永宣公是迁入岑溪始祖", "number": 1 },
+      { "text": "检教", "number": 2 },
+      { "text": "朝亮", "number": 3 },
+      { "text": "宗深", "number": 4 },
+      { "text": "法兆", "number": 5 },
+      { "text": "甘朋", "number": 6 },
+      { "text": "际亨", "number": 7 },
+      { "text": "保志", "number": 8 },
+      { "text": "庆求", "number": 9 },
+      { "text": "道", "number": 10 },
+      { "text": "华", "number": 11 },
+      { "text": "伦", "number": 12 },
+      { "text": "望", "number": 13 },
+      { "text": "广", "number": 14 },
+      { "text": "甘", "number": 15 },
+      { "text": "昭", "number": 16 },
+      { "text": "奇", "number": 17 },
+      { "text": "福", "number": 18 },
+      { "text": "肇", "number": 19 },
+      { "text": "寿", "number": 20 },
+      { "text": "延", "number": 21 },
+      { "text": "元", "number": 22 },
+      { "text": "宗", "number": 23 },
+      { "text": "德", "number": 24 },
+      { "text": "云", "number": 25 },
+      { "text": "仍", "number": 26 },
+      { "text": "雨", "number": 27 },
+      { "text": "泽", "number": 28 },
+      { "text": "长", "number": 29 }
+    ],
+    "sections": [
+      {
+        "title": "甘朋公支系族谱对：",
+        "rows": [
+          ["朋际保庆道华伦", "寿延元宗德"],
+          ["望广甘昭奇福肇", "云仍雨泽长"]
+        ]
+      },
+      {
+        "title": "若平拟后续族谱对：",
+        "lines": [
+          "家业宏大永昌盛",
+          "国世兴文远繁荣"
+        ]
+      },
+      {
+        "title": "道显公支系后裔族谱对：",
+        "lines": [
+          "初庆昌荣光世泽",
+          "新传礼德发宏基"
+        ],
+        "generations": [
+          { "text": "以", "number": 18 },
+          { "text": "初", "number": 19 },
+          { "text": "庆", "number": 20 },
+          { "text": "昌", "number": 21 },
+          { "text": "荣", "number": 22 },
+          { "text": "光", "number": 23 },
+          { "text": "世", "number": 24 },
+          { "text": "泽", "number": 25 }
+        ],
+        "note": "初字与肇字同辈，为入岑第19世祖。"
+      }
+    ]
+  }
+}
