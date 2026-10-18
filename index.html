@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@300;400;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script defer src="./app.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
   </head>
   <body>
     <div class="page-frame">
@@ -106,8 +107,16 @@
 
       <footer class="site-footer">
         <p class="site-footer-credit">网页制作：<strong>甘子乐</strong></p>
-        <p class="site-footer-note">若发现任何资料错误或错别字，欢迎提交给我核对和更改。</p>
-        <button class="footer-feedback-button" type="button" data-open-feedback>提交错别字</button>
+        <p class="site-footer-note">若发现资料错误、错别字或网页问题，欢迎提交给我核对和更改。</p>
+        <a
+          class="footer-feedback-button"
+          href="https://tally.so/r/2j8yde"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-tally-open="2j8yde"
+          data-tally-layout="modal"
+          data-tally-width="700"
+        >提交错误或 Bug</a>
       </footer>
     </div>
 
@@ -116,10 +125,18 @@
         <span aria-hidden="true">⌕</span>
         <span>搜索</span>
       </button>
-      <button type="button" data-open-feedback aria-haspopup="dialog" aria-controls="feedback-dialog">
+      <a
+        href="https://tally.so/r/2j8yde"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-tally-open="2j8yde"
+        data-tally-layout="modal"
+        data-tally-width="700"
+        aria-label="提交错别字或网页问题"
+      >
         <span aria-hidden="true">✎</span>
         <span>纠错</span>
-      </button>
+      </a>
     </nav>
 
     <dialog class="utility-dialog search-dialog" id="search-dialog" aria-labelledby="search-dialog-title">
@@ -156,43 +173,6 @@
             <ol id="search-result-list"></ol>
           </section>
         </div>
-      </div>
-    </dialog>
-
-    <dialog class="utility-dialog feedback-dialog" id="feedback-dialog" aria-labelledby="feedback-dialog-title">
-      <div class="utility-dialog-card">
-        <header class="utility-dialog-header">
-          <div>
-            <p class="utility-dialog-eyebrow">资料纠错</p>
-            <h2 id="feedback-dialog-title">提交错字或资料错误</h2>
-          </div>
-          <button class="utility-dialog-close" type="button" data-dialog-close="feedback-dialog" aria-label="关闭纠错表单">×</button>
-        </header>
-        <form class="feedback-form" id="feedback-form">
-          <label>
-            <span>所在位置</span>
-            <input id="feedback-location" name="location" type="text" placeholder="例如：甘朋公支系，第12页">
-          </label>
-          <label>
-            <span>目前原文或错字</span>
-            <textarea id="feedback-original" name="original" rows="3" required></textarea>
-          </label>
-          <label>
-            <span>建议改为</span>
-            <textarea id="feedback-correction" name="correction" rows="3" required></textarea>
-          </label>
-          <label>
-            <span>补充说明（选填）</span>
-            <textarea id="feedback-note" name="note" rows="3"></textarea>
-          </label>
-          <div class="feedback-actions">
-            <button class="primary-action" type="submit">通过 GitHub 提交</button>
-            <button type="button" id="copy-feedback-button">复制反馈内容</button>
-            <button type="button" id="download-feedback-button">下载反馈文本</button>
-          </div>
-          <p class="feedback-status" id="feedback-status" role="status" aria-live="polite"></p>
-          <p class="feedback-help">GitHub 提交需要账号；没有账号时，可复制或下载整理好的反馈，再通过平常使用的联系方式发给甘子乐。网页不会自动保存你的填写内容。</p>
-        </form>
       </div>
     </dialog>
 

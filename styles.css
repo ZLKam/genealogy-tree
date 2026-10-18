@@ -650,12 +650,12 @@ h2 {
 }
 
 .footer-feedback-button,
-.feedback-actions button,
-.utility-dock button {
+.utility-dock :is(button, a) {
   border: 1px solid var(--line-strong);
   color: var(--ink);
   background: rgba(255, 255, 255, 0.28);
   cursor: pointer;
+  text-decoration: none;
   transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
@@ -667,24 +667,19 @@ h2 {
 
 .footer-feedback-button:hover,
 .footer-feedback-button:focus-visible,
-.feedback-actions button:hover,
-.feedback-actions button:focus-visible,
-.utility-dock button:hover,
-.utility-dock button:focus-visible {
+.utility-dock :is(button, a):hover,
+.utility-dock :is(button, a):focus-visible {
   border-color: var(--accent);
   color: var(--accent);
   background: rgba(143, 48, 40, 0.065);
 }
 
 .footer-feedback-button:focus-visible,
-.feedback-actions button:focus-visible,
-.utility-dock button:focus-visible,
+.utility-dock :is(button, a):focus-visible,
 .utility-dialog-close:focus-visible,
 .search-suggestion:focus-visible,
 .search-result-button:focus-visible,
-.search-field input:focus-visible,
-.feedback-form input:focus-visible,
-.feedback-form textarea:focus-visible {
+.search-field input:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
@@ -698,7 +693,7 @@ h2 {
   gap: 8px;
 }
 
-.utility-dock button {
+.utility-dock :is(button, a) {
   display: grid;
   grid-template-columns: 1.25em auto;
   align-items: center;
@@ -710,7 +705,7 @@ h2 {
   backdrop-filter: blur(8px);
 }
 
-.utility-dock button span:first-child {
+.utility-dock :is(button, a) span:first-child {
   color: var(--accent);
   font-size: 1.16em;
   line-height: 1;
@@ -784,22 +779,18 @@ h2 {
   cursor: pointer;
 }
 
-.utility-dialog-body,
-.feedback-form {
+.utility-dialog-body {
   padding: clamp(18px, 4vw, 30px);
 }
 
-.search-field,
-.feedback-form label {
+.search-field {
   display: grid;
   gap: 0.42rem;
   color: var(--ink);
   font-weight: 700;
 }
 
-.search-field input,
-.feedback-form input,
-.feedback-form textarea {
+.search-field input {
   width: 100%;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
@@ -807,21 +798,12 @@ h2 {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.search-field input,
-.feedback-form input {
+.search-field input {
   min-height: 46px;
   padding: 0.65rem 0.78rem;
 }
 
-.feedback-form textarea {
-  min-height: 82px;
-  padding: 0.7rem 0.78rem;
-  line-height: 1.6;
-  resize: vertical;
-}
-
-.search-help,
-.feedback-help {
+.search-help {
   margin: 0.55rem 0 0;
   color: var(--ink-soft);
   font-size: 0.88rem;
@@ -957,43 +939,6 @@ h2 {
   }
 }
 
-.feedback-form {
-  display: grid;
-  gap: 1rem;
-}
-
-.feedback-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.62rem;
-  margin-top: 0.2rem;
-}
-
-.feedback-actions button {
-  min-height: 42px;
-  padding: 0.56rem 0.82rem;
-  border-radius: 8px;
-}
-
-.feedback-actions .primary-action {
-  border-color: var(--accent);
-  color: #fffaf2;
-  background: var(--accent);
-}
-
-.feedback-actions .primary-action:hover,
-.feedback-actions .primary-action:focus-visible {
-  color: #fff;
-  background: #76251f;
-}
-
-.feedback-status {
-  min-height: 1.5em;
-  margin: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
 @media (max-width: 600px) {
   body {
     padding: 0;
@@ -1111,7 +1056,7 @@ h2 {
     bottom: 10px;
   }
 
-  .utility-dock button {
+  .utility-dock :is(button, a) {
     grid-template-columns: 1.2em auto;
     justify-items: start;
     width: auto;
@@ -1119,7 +1064,7 @@ h2 {
     padding: 0.5rem 0.72rem;
   }
 
-  .utility-dock button span:last-child {
+  .utility-dock :is(button, a) span:last-child {
     position: static;
     width: auto;
     height: auto;
@@ -1142,8 +1087,7 @@ h2 {
     padding: 15px 16px 13px;
   }
 
-  .utility-dialog-body,
-  .feedback-form {
+  .utility-dialog-body {
     padding: 16px;
   }
 
@@ -1151,9 +1095,6 @@ h2 {
     max-height: 132px;
   }
 
-  .feedback-actions {
-    display: grid;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1166,8 +1107,7 @@ h2 {
   }
 
   .footer-feedback-button,
-  .feedback-actions button,
-  .utility-dock button {
+  .utility-dock :is(button, a) {
     transition: none;
   }
 

@@ -14,15 +14,6 @@ const siteElements = {
   searchResults: document.querySelector("#search-results"),
   searchResultCount: document.querySelector("#search-result-count"),
   searchResultList: document.querySelector("#search-result-list"),
-  feedbackDialog: document.querySelector("#feedback-dialog"),
-  feedbackForm: document.querySelector("#feedback-form"),
-  feedbackLocation: document.querySelector("#feedback-location"),
-  feedbackOriginal: document.querySelector("#feedback-original"),
-  feedbackCorrection: document.querySelector("#feedback-correction"),
-  feedbackNote: document.querySelector("#feedback-note"),
-  feedbackStatus: document.querySelector("#feedback-status"),
-  copyFeedbackButton: document.querySelector("#copy-feedback-button"),
-  downloadFeedbackButton: document.querySelector("#download-feedback-button"),
 };
 
 let chapters = [];
@@ -31,8 +22,6 @@ let chapterTrackingFrame = 0;
 let searchRecords = [];
 let searchSuggestionButtons = [];
 let activeSearchSuggestionIndex = -1;
-
-const feedbackRepository = "ZLKam/genealogy-tree";
 
 const visibleChapterHeadingIds = new Set([
   "01",
@@ -1113,116 +1102,6 @@ function selectSearchTerm(term) {
   renderSearchResults(term);
 }
 
-function currentFeedbackLocation() {
-  const chapterId = chapterAtReadingLine();
-  const chapter = chapters.find((entry) => entry.id === chapterId);
-
-  if (!chapter) {
-    return "编者说明";
-  }
-
-  return `${chapter.title}（原谱第${chapter.originalPage}页）`;
-}
-
-function feedbackText() {
-  const pageUrl = window.location.protocol === "file:"
-    ? "本地族谱网页"
-    : window.location.href;
-  const note = normalizeSearchText(siteElements.feedbackNote.value);
-  const lines = [
-    "## 族谱纠错",
-    "",
-    `- 所在位置：${normalizeSearchText(siteElements.feedbackLocation.value) || "未填写"}`,
-    `- 目前原文或错字：${normalizeSearchText(siteElements.feedbackOriginal.value)}`,
-    `- 建议改为：${normalizeSearchText(siteElements.feedbackCorrection.value)}`,
-  ];
-
-  if (note) {
-    lines.push(`- 补充说明：${note}`);
-  }
-
-  lines.push("", `来源网页：${pageUrl}`);
-  return lines.join("\n");
-}
-
-function feedbackIssueUrl() {
-  const original = normalizeSearchText(siteElements.feedbackOriginal.value);
-  const titleDetail = original ? `：${original.slice(0, 24)}` : "";
-  const query = new URLSearchParams({
-    title: `[族谱纠错]${titleDetail}`,
-    body: feedbackText(),
-  });
-  return `https://github.com/${feedbackRepository}/issues/new?${query.toString()}`;
-}
-
-function validateFeedbackForm() {
-  if (siteElements.feedbackForm.reportValidity()) {
-    return true;
-  }
-
-  siteElements.feedbackStatus.textContent = "请先填写目前原文和建议改法。";
-  return false;
-}
-
-async function copyFeedbackText() {
-  if (!validateFeedbackForm()) {
-    return;
-  }
-
-  const text = feedbackText();
-
-  try {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-    } else {
-      const temporary = document.createElement("textarea");
-      temporary.value = text;
-      temporary.setAttribute("readonly", "");
-      temporary.style.position = "fixed";
-      temporary.style.opacity = "0";
-      document.body.append(temporary);
-      temporary.select();
-
-      if (!document.execCommand("copy")) {
-        throw new Error("copy failed");
-      }
-
-      temporary.remove();
-    }
-
-    siteElements.feedbackStatus.textContent = "反馈内容已复制。";
-  } catch {
-    siteElements.feedbackStatus.textContent = "浏览器未能自动复制，请改用“下载反馈文本”。";
-  }
-}
-
-function downloadFeedbackText() {
-  if (!validateFeedbackForm()) {
-    return;
-  }
-
-  const file = new Blob([feedbackText()], { type: "text/plain;charset=utf-8" });
-  const link = document.createElement("a");
-  const date = new Date().toISOString().slice(0, 10);
-  link.href = URL.createObjectURL(file);
-  link.download = `族谱纠错-${date}.txt`;
-  document.body.append(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(link.href);
-  siteElements.feedbackStatus.textContent = "反馈文本已下载。";
-}
-
-function openFeedbackDialog() {
-  if (!normalizeSearchText(siteElements.feedbackLocation.value)) {
-    siteElements.feedbackLocation.value = currentFeedbackLocation();
-  }
-
-  siteElements.feedbackStatus.textContent = "";
-  openUtilityDialog(siteElements.feedbackDialog);
-  window.setTimeout(() => siteElements.feedbackOriginal.focus(), 0);
-}
-
 function initializeUtilities() {
   siteElements.searchButton.addEventListener("click", () => {
     openUtilityDialog(siteElements.searchDialog);
@@ -1232,23 +1111,17 @@ function initializeUtilities() {
     }, 0);
   });
 
-  for (const button of document.querySelectorAll("[data-open-feedback]")) {
-    button.addEventListener("click", openFeedbackDialog);
-  }
-
   for (const button of document.querySelectorAll("[data-dialog-close]")) {
     button.addEventListener("click", () => {
       closeUtilityDialog(document.getElementById(button.dataset.dialogClose));
     });
   }
 
-  for (const dialog of [siteElements.searchDialog, siteElements.feedbackDialog]) {
-    dialog.addEventListener("click", (event) => {
-      if (event.target === dialog) {
-        closeUtilityDialog(dialog);
-      }
-    });
-  }
+  siteElements.searchDialog.addEventListener("click", (event) => {
+    if (event.target === siteElements.searchDialog) {
+      closeUtilityDialog(siteElements.searchDialog);
+    }
+  });
 
   siteElements.searchInput.addEventListener("input", () => {
     renderSearchSuggestions(siteElements.searchInput.value);
@@ -1267,22 +1140,6 @@ function initializeUtilities() {
     }
   });
 
-  siteElements.feedbackForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!validateFeedbackForm()) {
-      return;
-    }
-
-    window.open(feedbackIssueUrl(), "_blank", "noopener,noreferrer");
-    siteElements.feedbackStatus.textContent = "已打开预填好的 GitHub Issue，请登录后确认提交。";
-  });
-
-  siteElements.copyFeedbackButton.addEventListener("click", copyFeedbackText);
-  siteElements.downloadFeedbackButton.addEventListener("click", downloadFeedbackText);
-  siteElements.feedbackForm.addEventListener("input", () => {
-    siteElements.feedbackStatus.textContent = "";
-  });
 }
 
 function currentChapterId() {
