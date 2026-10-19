@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="甘朋公际亨公支系完整世系树，可搜索人物、追溯祖先路径并核对族谱原文。">
+    <title>完整世系树｜甘朋公际亨公支系族谱</title>
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./family-tree.css">
+    <script defer src="./data/family-tree-data.js"></script>
+    <script defer src="./family-tree.js"></script>
+  </head>
+  <body>
+    <div class="tree-shell">
+      <header class="tree-header">
+        <a class="back-link" href="./index.html" aria-label="返回族谱主页">
+          <span aria-hidden="true">←</span>
+          <span>返回族谱主页</span>
+        </a>
+        <div class="tree-title-group">
+          <p>甘氏宗亲 · 甘朋公际亨公支系</p>
+          <h1>完整世系树</h1>
+        </div>
+        <button class="review-button" id="open-review-dialog" type="button" aria-haspopup="dialog" aria-controls="review-dialog">
+          <span id="review-count">—</span>
+          <span>项资料待核</span>
+        </button>
+      </header>
+
+      <main class="tree-app">
+        <aside class="tree-sidebar" aria-label="族谱树工具">
+          <section class="sidebar-section search-section" aria-labelledby="tree-search-title">
+            <div class="section-label">
+              <span>查找宗亲</span>
+              <small id="search-result-status" aria-live="polite"></small>
+            </div>
+            <h2 id="tree-search-title">从姓名进入一条世系</h2>
+            <label class="search-box" for="tree-search-input">
+              <span aria-hidden="true">⌕</span>
+              <input id="tree-search-input" type="search" autocomplete="off" placeholder="输入姓名或曾用名" aria-controls="tree-search-results" aria-expanded="false">
+            </label>
+            <div class="search-results" id="tree-search-results" role="listbox" hidden></div>
+          </section>
+
+          <section class="sidebar-section tree-summary" aria-labelledby="tree-summary-title">
+            <div class="section-label"><span>资料范围</span></div>
+            <h2 id="tree-summary-title">现有 2020 年版所载世系</h2>
+            <div class="summary-grid">
+              <div><strong id="person-count">—</strong><span>有名人物</span></div>
+              <div><strong id="generation-count">—</strong><span>世代</span></div>
+              <div><strong id="source-count">—</strong><span>原文记录</span></div>
+              <div><strong id="chapter-count">—</strong><span>章节</span></div>
+            </div>
+            <p class="scope-note">树中不补写原谱没有记载的姓名。虚线表示原文缺少直接上代，或不同章节存在异写。</p>
+          </section>
+
+          <section class="sidebar-section generation-control" aria-labelledby="generation-title">
+            <div class="section-label"><span>展开范围</span></div>
+            <div class="generation-heading">
+              <h2 id="generation-title">显示至第 <output id="generation-output" for="generation-range">12</output> 世</h2>
+              <button id="show-all-generations" type="button">显示全部</button>
+            </div>
+            <input id="generation-range" type="range" min="6" max="24" value="12" step="1">
+            <div class="range-labels" aria-hidden="true"><span>始祖</span><span>最新记录</span></div>
+          </section>
+
+          <section class="sidebar-section legend" aria-labelledby="legend-title">
+            <div class="section-label"><span>图例</span></div>
+            <h2 id="legend-title">红黑世系阅读方式</h2>
+            <ul>
+              <li><i class="legend-node legend-node-black"></i><span>原谱明确记载的人物</span></li>
+              <li><i class="legend-node legend-node-red"></i><span>当前人物至始祖的路径</span></li>
+              <li><i class="legend-node legend-node-review"></i><span>原文异写或衔接待核</span></li>
+              <li><i class="legend-line legend-line-adoptive"></i><span>继嗣或过继关系</span></li>
+            </ul>
+          </section>
+
+          <p class="sidebar-footnote">单击人物查看资料；双击人物可展开或收起其后代。拖动画布移动，滚轮或双指缩放。</p>
+        </aside>
+
+        <section class="tree-workspace" aria-label="甘氏完整世系树画布">
+          <div class="tree-toolbar" role="toolbar" aria-label="画布工具">
+            <div class="toolbar-group">
+              <button id="zoom-out" type="button" aria-label="缩小">−</button>
+              <button id="zoom-in" type="button" aria-label="放大">＋</button>
+              <button id="fit-tree" type="button">适合画面</button>
+            </div>
+            <div class="toolbar-group toolbar-view-actions">
+              <button id="reset-tree" type="button">回到始祖</button>
+              <button id="restore-full-tree" type="button" hidden>返回完整世系</button>
+            </div>
+            <p class="visible-status" id="visible-status" aria-live="polite">正在整理世系……</p>
+          </div>
+
+          <div class="tree-stage" id="tree-stage">
+            <svg id="tree-svg" role="img" aria-labelledby="svg-title svg-description">
+              <title id="svg-title">甘朋公际亨公支系世系树</title>
+              <desc id="svg-description">从永宣公开始、按世代向下排列的可缩放族谱树。</desc>
+              <g id="tree-viewport">
+                <g id="tree-links"></g>
+                <g id="tree-adoption-links"></g>
+                <g id="tree-nodes"></g>
+              </g>
+            </svg>
+            <div class="tree-loading" id="tree-loading" role="status">
+              <span aria-hidden="true"></span>
+              <p>正在载入 35 章世系资料……</p>
+            </div>
+            <div class="tree-error" id="tree-error" role="alert" hidden>
+              <strong>族谱树未能载入</strong>
+              <p>请返回主页后重新进入，或通过本地网页服务器打开项目。</p>
+            </div>
+          </div>
+
+          <aside class="person-panel" id="person-panel" aria-labelledby="person-name" hidden>
+            <header class="person-panel-header">
+              <div>
+                <p id="person-generation">人物资料</p>
+                <h2 id="person-name"></h2>
+              </div>
+              <button id="close-person-panel" type="button" aria-label="关闭人物资料">×</button>
+            </header>
+            <div class="person-panel-body" id="person-panel-body"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="review-dialog" id="review-dialog" aria-labelledby="review-dialog-title">
+      <div class="review-dialog-card">
+        <header>
+          <div>
+            <p>数据核验</p>
+            <h2 id="review-dialog-title">原谱中需要进一步确认的资料</h2>
+          </div>
+          <button type="button" id="close-review-dialog" aria-label="关闭待核资料">×</button>
+        </header>
+        <div class="review-intro">
+          <p>这些项目来自章节间异写、人物名单与后文不一致，或原文未注明直接上代。页面没有隐藏或擅自修正。</p>
+        </div>
+        <ol id="review-list"></ol>
+      </div>
+    </dialog>
+
+    <noscript>此族谱树需要启用 JavaScript 才能进行搜索、展开和缩放。</noscript>
+  </body>
+</html>

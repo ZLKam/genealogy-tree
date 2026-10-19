@@ -123,6 +123,55 @@ h1 {
   letter-spacing: 0.18em;
 }
 
+.family-tree-entry {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.72rem;
+  width: fit-content;
+  min-height: 46px;
+  margin: 28px auto 0;
+  padding: 0.55rem 1rem 0.55rem 0.62rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 22px rgba(62, 47, 31, 0.09);
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.family-tree-entry span:first-child {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fffaf1;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  background: var(--accent);
+}
+
+.family-tree-entry span:last-child {
+  color: var(--accent);
+  font-size: 1.12em;
+}
+
+.family-tree-entry:hover,
+.family-tree-entry:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(143, 48, 40, 0.06);
+  transform: translateY(-1px);
+}
+
+.family-tree-entry:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 main {
   padding: 0 clamp(20px, 7vw, 82px) clamp(50px, 8vw, 86px);
 }
@@ -952,6 +1001,10 @@ h2 {
 
   .masthead {
     padding-inline: 12px;
+  }
+
+  .family-tree-entry {
+    margin-top: 24px;
   }
 
   h1 {

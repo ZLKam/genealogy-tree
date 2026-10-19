@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "甘朋公际亨公支系族谱·世系树",
+    "sourceEditionDate": "2020.9.9",
+    "sourceEditionDateTime": "2020-09-09",
+    "rootPersonId": "p0001",
+    "scope": "现有2020年版资料所载世系",
+    "methodology": "以第5章详细世系为主干，第6至35章逐条抽取；不确定衔接以待核关系保留。"
+  },
+  "stats": {
+    "chapters": 35,
+    "lineageEntries": 491,
+    "sourceRecords": 511,
+    "resolvedSourceRecords": 511,
+    "people": 1090,
+    "connectedPeople": 1090,
+    "links": 1093,
+    "reviewIssues": 17,
+    "standaloneRoots": 0
+  },
+  "issueCounts": {
+    "source-conflict": 4,
+    "source-variant": 2,
+    "layout-inference": 4,
+    "unlinked-branch": 7
+  },
+  "standaloneRoots": [],
+  "unresolvedSources": [],
+  "issues": [
+    {
+      "id": "i001",
+      "type": "source-conflict",
+      "severity": "review",
+      "message": "宗深公次子在第5章记为“法尧”，第1章迁徙图记为“法宽”；页面保留两种原文写法，待原谱核定。",
+      "chapterId": "01",
+      "page": 3,
+      "sourceId": null,
+      "personIds": [
+        "p0008"
+      ]
+    },
+    {
+      "id": "i002",
+      "type": "source-variant",
+      "severity": "review",
+      "message": "第08章使用“肇鹏”，与前文“肇朋”疑为同一人；已合并展示并保留异写。",
+      "chapterId": "08",
+      "page": 11,
+      "sourceId": "s0060",
+      "personIds": [
+        "p0050"
+      ]
+    },
+    {
+      "id": "i003",
+      "type": "layout-inference",
+      "severity": "review",
+      "message": "“甘斌”未出现在上代的子女名单中，现依章节层级暂接在“肇奇”名下。",
+      "chapterId": "10",
+      "page": 13,
+      "sourceId": "s0098",
+      "personIds": [
+        "p0055",
+        "p0202"
+      ]
+    },
+    {
+      "id": "i004",
+      "type": "layout-inference",
+      "severity": "review",
+      "message": "“甘洋”未出现在上代的子女名单中，现依章节层级暂接在“寿军”名下。",
+      "chapterId": "12",
+      "page": 15,
+      "sourceId": "s0124",
+      "personIds": [
+        "p0254",
+        "p0268"
+      ]
+    },
+    {
+      "id": "i005",
+      "type": "layout-inference",
+      "severity": "review",
+      "message": "“孔娟”未出现在上代的子女名单中，现依章节层级暂接在“海初”名下。",
+      "chapterId": "29",
+      "page": 32,
+      "sourceId": "s0382",
+      "personIds": [
+        "p0840",
+        "p0849"
+      ]
+    },
+    {
+      "id": "i006",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启贞”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "30",
+      "page": 33,
+      "sourceId": "s0389",
+      "personIds": [
+        "p0856"
+      ]
+    },
+    {
+      "id": "i007",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启祥”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "30",
+      "page": 33,
+      "sourceId": "s0390",
+      "personIds": [
+        "p0857"
+      ]
+    },
+    {
+      "id": "i008",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启清”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "30",
+      "page": 33,
+      "sourceId": "s0392",
+      "personIds": [
+        "p0858"
+      ]
+    },
+    {
+      "id": "i009",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启瑞”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "30",
+      "page": 33,
+      "sourceId": "s0402",
+      "personIds": [
+        "p0885"
+      ]
+    },
+    {
+      "id": "i010",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启余”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "31",
+      "page": 34,
+      "sourceId": "s0420",
+      "personIds": [
+        "p0921"
+      ]
+    },
+    {
+      "id": "i011",
+      "type": "source-variant",
+      "severity": "review",
+      "message": "第32章使用“启华”，与前文“启铧”疑为同一人；已合并展示并保留异写。",
+      "chapterId": "32",
+      "page": 35,
+      "sourceId": "s0439",
+      "personIds": [
+        "p0706"
+      ]
+    },
+    {
+      "id": "i012",
+      "type": "layout-inference",
+      "severity": "review",
+      "message": "“以德”未出现在上代的子女名单中，现依章节层级暂接在“启鉴”名下。",
+      "chapterId": "34",
+      "page": 38,
+      "sourceId": "s0493",
+      "personIds": [
+        "p0708",
+        "p1057"
+      ]
+    },
+    {
+      "id": "i013",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启照”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "35",
+      "page": 39,
+      "sourceId": "s0499",
+      "personIds": [
+        "p1078"
+      ]
+    },
+    {
+      "id": "i014",
+      "type": "unlinked-branch",
+      "severity": "review",
+      "message": "“启福”在现有资料中没有可确定的上代衔接。",
+      "chapterId": "35",
+      "page": 39,
+      "sourceId": "s0504",
+      "personIds": [
+        "p1083"
+      ]
+    },
+    {
+      "id": "i015",
+      "type": "source-conflict",
+      "severity": "review",
+      "message": "第10章记“甘斌”，而肇奇公子女名单记“甘武”，两者是否同一人待核。",
+      "chapterId": "10",
+      "page": 13,
+      "sourceId": "s0098",
+      "personIds": [
+        "p0202"
+      ]
+    },
+    {
+      "id": "i016",
+      "type": "source-conflict",
+      "severity": "review",
+      "message": "第12章后文记“甘洋”，而寿军子女名单记“甘延洋”，两者是否同一人待核。",
+      "chapterId": "12",
+      "page": 15,
+      "sourceId": "s0124",
+      "personIds": [
+        "p0268"
+      ]
+    },
+    {
+      "id": "i017",
+      "type": "source-conflict",
+      "severity": "review",
+      "message": "第29章记“孔娟嫁苍梧岭脚黄门”，前文海初女儿名单记“孔媚”，姓名对应待核。",
+      "chapterId": "29",
+      "page": 32,
+      "sourceId": "s0382",
+      "personIds": [
+        "p0849"
+      ]
+    }
+  ]
+}
